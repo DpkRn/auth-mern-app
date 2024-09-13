@@ -12,7 +12,7 @@ function Home() {
   },[])
 
   const fetchData=async ()=>{
-    const url="http://localhost:8080/products"
+    const url="https://auth-mern-app-henna.vercel.app/products"
     const headers={
       headers:{
         'Authorization':localStorage.getItem('token')
