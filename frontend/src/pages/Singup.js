@@ -3,9 +3,11 @@ import { Link, useNavigate } from "react-router-dom";
 import { ToastContainer } from "react-toastify";
 import "../index.css";
 import { handleError, handleSuccess } from "../utils";
+import CircularProgress from '@mui/material/CircularProgress';
 
 function Singup() {
   const navigator = useNavigate();
+  const [isLoading,setLoading]=useState(false)
   const [singupInfo, setSignupInfo] = useState({
     name: "",
     email: "",
@@ -24,6 +26,7 @@ function Singup() {
     const { name, email, password } = singupInfo;
     if (!name || !email || !password)
       return handleError("All fields required !");
+       setLoading(true)
     try {
       const url = "https://auth-mern-app-henna.vercel.app/auth/signup";
       const response = await fetch(url, {
@@ -34,6 +37,7 @@ function Singup() {
         body: JSON.stringify(singupInfo),
       });
       const result = await response.json();
+      setLoading(false)
       const { message, success, error } = result;
       if (success) {
         handleSuccess(message);
@@ -93,7 +97,9 @@ function Singup() {
         <span>
           Already have an account?<Link to="/login">Login</Link>
         </span>
+        {isLoading&&<CircularProgress color="secondary" className="progress"/>}
       </form>
+      
       <ToastContainer />
     </div>
   );
