@@ -67,6 +67,9 @@ button:active{
 .progress{
 margin-left: auto;
 margin-right: auto;
+/* height: 400px;
+width: 400px;
+background-color: red; */
 }
 
 .logoutBtn{
