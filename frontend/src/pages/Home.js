@@ -2,6 +2,7 @@ import React, { useEffect, useState } from 'react'
 import { handleError } from '../utils'
 import { ToastContainer } from 'react-toastify'
 import { useNavigate } from 'react-router-dom'
+import '../index.css'
 
 function Home() {
   const [loggedUser,setLoggedUser]=useState('')
@@ -56,9 +57,10 @@ function Home() {
           </li>))}
           </ul>
         </div>
-        <button onClick={handleLogOut}>LogOut</button>
+        <button onClick={handleLogOut} className='logoutBtn'>LogOut</button>
         
         <ToastContainer/>
+        <span className="author">Author: Deepak Kumar</span>
     </div>
   )
 }

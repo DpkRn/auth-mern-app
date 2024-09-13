@@ -14,8 +14,10 @@ html,body{
 }
 body{
   display: flex;
+  
   justify-content: center;
   align-items: center;
+  background-color: azure;
 }
 .container{
   background-color: #FFF;
@@ -58,8 +60,24 @@ button{
   cursor: pointer;
   margin: 10px 0;
 }
+button:active{
+  background-color: rgb(63, 2, 63);
+}
 
 .progress{
 margin-left: auto;
 margin-right: auto;
+}
+
+.logoutBtn{
+  padding: 10px 20px;
+}
+
+.logoutBtn:active{
+background-color: rgb(67, 5, 67);
+}
+.author{
+  position: absolute;
+  bottom: 0;
+  right: 0;
 }

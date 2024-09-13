@@ -101,6 +101,7 @@ function Singup() {
       </form>
       
       <ToastContainer />
+      <span className="author">Author: Deepak Kumar</span>
     </div>
   );
 }

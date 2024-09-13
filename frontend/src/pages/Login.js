@@ -87,12 +87,13 @@ function Login() {
         </div>
         <button type="submit">Login</button>
         <span>
-          Already have an account?<Link to="/signup">Login</Link>
+          New user?<Link to="/signup">Signup</Link>
         </span>
         {isLoading&&<CircularProgress className="progress" color="secondary"/>}
       </form>
       
       <ToastContainer />
+      <span className="author">Author: Deepak Kumar</span>
     </div>
   );
 }
